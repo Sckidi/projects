@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+  <nav>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <%= link_to "Projects", projects_path, class: "nav-link active" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Add project", new_project_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Tasks", tasks_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Add task", new_task_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+      <li>
+         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link pull-xs-right" %>
+      </li>
+         <% else %>
+      <li class="pull-right">
+         <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="pull-right">
+         <%= link_to "Sign up", new_user_registration_path, class: "nav-link"  %>
+      </li>
+      <% end %>
+  </ul>
+  </nav>
+  <% flash.each do |name, message| %>
+  <div class="alert <%=bootstrap_class_for(name) %>">
+    <button class="close" data-dismiss="alert">6times</button>
+    <%= message %>
+  </div>
+  <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </div>
+  </body>
+</html>

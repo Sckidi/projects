@@ -1,0 +1,16 @@
+current directory: E:/project/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.4/ext/bootsnap
+C:/Ruby25-x64/bin/ruby.exe -r ./siteconf20190425-1612-121vm1o.rb extconf.rb
+creating Makefile
+
+current directory: E:/project/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: E:/project/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR="
+generating bootsnap-x64-mingw32.def
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: E:/project/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20190425-1612-7u6d2d/bootsnap

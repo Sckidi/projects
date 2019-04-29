@@ -1,0 +1,38 @@
+
+<h3>Listing projects</h3>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Summary</th>
+    <th scope="col">Start date</th>
+    <th scope="col">End date</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.title %></td>
+      <td><%= project.summary %></td>
+      <td><%= project.start_date %></td>
+      <td><%= project.end_date %></td>
+      <td></td>
+    </tr>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary"><%= link_to 'Show', project_path(project) %></button>
+      <button type="button" class="btn btn-secondary"><%= link_to 'Edit', edit_project_path(project) %></button>
+      <button type="button" class="btn btn-secondary"><%= link_to 'Destroy', project_path(project),
+                                            method: :delete,
+                                            data: { confirm: 'Are you sure?' } %></button>
+    </div>
+
+
+  <% end %>
+  </tbody>
+</table>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary"><%= link_to 'New project', new_project_path %></button>
+</div>
